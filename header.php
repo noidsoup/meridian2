@@ -18,14 +18,40 @@
   <body>
 
 <div class="container">
-	<div class="row" style="height:75px;">
-		<div class="col-md-10">Logo</div>
-		<div class="col-md-1">login cart</div>
-		<div class="col-md-1">Search</div>
-	</div>
+	<header>
+		<div class="row">
+			<div id="logo" class="col-md-7"><a href="<?php get_home_url(); ?>"><img src="http://meridiancoin.com/wp-content/themes/Meridian2/images/logo.png" /></a></div>
+			
+			<div class="col-md-3 login-cart">
+				<span class="glyph-icons"><img src="http://meridiancoin.com/wp-content/themes/Meridian2/images/keyhole-glyph.png"><a href="<?php echo wp_login_url(); ?>" title="Login">LOGIN</a></span>
+				<span class="glyph-icons"><img src="http://meridiancoin.com/wp-content/themes/Meridian2/images/cart-glyph.png"><a>CART</a></span>
+			</div>	
+			
+			<div class="col-md-2">
+				<form id="searchform" method="get" action="search.php">
+				<input class="search" value="Search Meridian Coin" name="s" id="s" onfocus="if (this.value == 'Search Meridian Coin') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search Meridian Coin';}" type="text">
+				</form>
+			</div>
+			
+			<div class="col-md-2">
+				
+			</div>
+			
+		</div>
 
-	<div class="row">
-		<div class="col-md-12"><?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?></div>
+		<div class="row">
+			<div class="col-md-11">
+			
+				<?php wp_nav_menu( array('menu' => 'Menu2' )); ?>
+			
+			</div>
+			
+			<div class="col-md-1">
 
-	</div>
+				<button type="button" class="btn btn-default sellyourcoins-btn">Sell your coins</button>
+			
+			</div>
+			
+		</div>
+	</header>
 </div>
